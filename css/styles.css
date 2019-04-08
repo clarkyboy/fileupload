@@ -1,0 +1,40 @@
+.navbar-inverse {
+    background-color: rgb(202, 202, 255);
+    margin: 0;
+}
+
+.navbar-brand {
+    background-color: crimson;
+}
+
+
+form,h1{
+    text-align: center;
+}
+
+
+.panel-body{
+ background-color: rgba(0, 217, 255, 0.466);
+ margin: 0;
+ 
+}
+
+.About {
+    background-color: greenyellow;
+}
+.About,h3 {
+    text-align: center;
+    font-size: 20px;
+}
+.About,button{
+    opacity: 0.8;
+}
+.footer{
+    background-color: #000;
+    color: #fff;
+}
+.copyright{
+    background-color: darkslateblue;
+    color: #fff;
+}
+

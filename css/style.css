@@ -1,0 +1,185 @@
+body {
+    font-family: 'Lato';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
+
+.navbar-inverse {
+    background-color: #9c4649;
+    border: 0;
+    border-radius: 0;
+    height: auto;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    background-color: #000;
+}
+
+.hello {
+    margin-top: 70px;
+}
+
+.hello>h1 {
+    font-size: 10rem;
+}
+
+.jumbotron {
+    background-color: #634040;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.portfolio>.container>h2 {
+    font-size: 6rem;
+}
+
+.portfolio {
+    margin-top: 70px;
+}
+
+#images {
+    margin-top: 50px;
+}
+
+#images .item-caption {
+    transition: all ease 0.5s;
+    opacity: 0;
+    background-color: rgba(24, 188, 156, 0.9);
+}
+
+#images .item-caption:hover {
+    opacity: 1;
+}
+
+.row>.col-md-4 {
+    margin-top: 30px;
+}
+
+.about>.container>h2 {
+    margin-top: 90px;
+    margin-bottom: 30px;
+    font-size: 6rem;
+}
+
+.about {
+    margin-top: 50px;
+    background-color: #634040;
+    color: #fff;
+}
+
+.about .btn {
+    margin-bottom: 90px;
+    border-radius: 2px;
+    background-color: transparent;
+    color: white;
+    height: 120%;
+}
+
+.about .btn:hover {
+    background-color: #fff;
+    color: #634040;
+}
+
+.contact {
+    margin-top: 70px;
+}
+
+.contact>.container>h2 {
+    font-size: 6rem;
+    margin-bottom: 80px;
+}
+
+.contact .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #969599;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.contact label {
+    color: #969599;
+}
+
+.contact .form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #634040;
+}
+
+.contact .btn-info {
+    background-color: #634040;
+    border: 0;
+    border-radius: 3px;
+    width: 10rem;
+}
+
+.details .btn-primary {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+    border: 2px solid;
+    background-color: #9c4649;
+}
+
+.details .btn-primary:hover {
+    background-color: #fff;
+    color: #9c4649;
+}
+
+.details {
+    margin-top: 80px;
+    background-color: #9c4649;
+    color: #fff;
+}
+
+.col-half-offset {
+    margin-left: 4.166666667%
+}
+
+.details h3 {
+    margin-bottom: 30px;
+}
+
+.footer {
+    background-color: #000;
+}
+
+.footer p {
+    margin-top: 10px;
+    color: #fff;
+}
+
+@media(max-width: 1400px) {
+    .portfolio:before {
+        height: 150px;
+        margin-top: -100px;
+        content: "";
+        display: block;
+        visibility: hidden;
+    }
+
+    .contact:before {
+        height: 150px;
+        margin-top: -100px;
+        content: "";
+        display: block;
+        visibility: hidden;
+    }
+}
