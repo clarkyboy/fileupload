@@ -1,13 +1,6 @@
 <?php
-    $name = null; $image = null;
-    $name = $_POST['name'];
-    $image = $_FILES['image']['name'];
-    $directory = $_POST['directory'];
-    echo $name;
-    echo "<br>";
-    echo $image;
-    echo "<br>";
-    echo $directory;
+$name = $_GET['name'];
+$address = $_GET['address'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,29 +23,11 @@
 </head>
 <body>
     <form id="data" method="post" enctype="multipart/form-data">
-        <input type="text" name="name" id="">
-        <input type="file" name="image" id="">
-        <input type="hidden" name="directory" value="/userimg/uploads/">
-        <button id="hello" onclick="signUp();">Add</button>
+        <input type="text" name="name" id="" value="<?php echo $name; ?>">
+        <input type="text" name="name" id="" value="<?php echo $address; ?>">
+        <!-- <input type="file" name="image" id=""> -->
+        <!-- //<input type="hidden" name="directory" value="/userimg/uploads/"> -->
+        <input type="submit" value="Add" name="add">
     </form>
 </body>
-<script>
-    function signUp(){
-        document.getElementById("hello").addEventListener("click", function(event){
-          event.preventDefault()
-        });
-        var formData = new FormData(document.getElementById('data'));
-        $.ajax({
-            url: "sample.php",
-            type: 'POST',
-            data: formData,
-            success: function (data) {
-                alert(data)
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-    }
-</script>
 </html>

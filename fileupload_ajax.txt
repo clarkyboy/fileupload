@@ -9,7 +9,7 @@ print_r($_FILES);
     <input type="text" name="middle" value="James" />
     <input type="text" name="last" value="Smith" />
     <input name="image" type="file" />
-    <button>Submit</button>
+    <button id="myCheckbox">Submit</button>
 </form>
 
 
@@ -31,4 +31,10 @@ $("form#data").submit(function(e) {
         contentType: false,
         processData: false
     });
+});
+
+
+JAVASCRIPT
+document.getElementById("myCheckbox").addEventListener("click", function(event){
+  event.preventDefault()
 });
