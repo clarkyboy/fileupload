@@ -2,9 +2,12 @@
     $name = null; $image = null;
     $name = $_POST['name'];
     $image = $_FILES['image']['name'];
+    $directory = $_POST['directory'];
     echo $name;
     echo "<br>";
     echo $image;
+    echo "<br>";
+    echo $directory;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +32,7 @@
     <form id="data" method="post" enctype="multipart/form-data">
         <input type="text" name="name" id="">
         <input type="file" name="image" id="">
+        <input type="hidden" name="directory" value="/userimg/uploads/">
         <button onclick="signUp();">Add</button>
     </form>
 </body>
