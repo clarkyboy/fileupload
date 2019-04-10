@@ -14,7 +14,7 @@
                 }else{
                     $target_new_directory = $directory.$imagepath;
                 }
-                if(file_exists($target_new_directory)){
+                if(file_exists($target_new_directory) && $target_new_directory != $directory."jedi.png" ){
                     header('Location: error.php');
                 }else{
                     $sql = "INSERT INTO employee (`emp_name`, emp_address, emp_image_path) VALUES ('$name', '$address', '$target_new_directory')";
