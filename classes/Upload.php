@@ -8,7 +8,7 @@
             $extension = pathinfo($imagepath, PATHINFO_EXTENSION);
             $array_extensions = array('png', 'jpg', 'jpeg', 'gif');
 
-            if(in_array($extension, $array_extensions)){
+            if(in_array($extension, $array_extensions) || $extension == null){
                 if($imagepath == null){
                     $target_new_directory = $directory."jedi.png";
                 }else{
