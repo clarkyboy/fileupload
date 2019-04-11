@@ -41,6 +41,21 @@
             }
             return $rows;
         }
+
+        public function retrieveEmpByName($name){
+            $sql = "SELECT * FROM employee WHERE emp_name = '$name'";
+            $result = $this->conn->query($sql);
+            $row = $result->fetch_assoc();
+            if(empty($row)){
+                header('Location: ../crudoop/error.php');
+            }else{
+                 // this will pass the row array to the next page which is 
+                //result.php
+                header('Location: ../crudoop/result.php?result='.urlencode(serialize($row)));
+            }
+          
+           
+        }
     }
 
 ?>
