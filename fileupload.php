@@ -6,10 +6,12 @@
         $name = $_POST['name'];
         $address = $_POST['address'];
         $image = $_FILES['image']['name']; // this contains the file name
+        $loginname = $_POST['loginname'];
+        $loginpass = $_POST['loginpass'];
         $tmp = $_FILES['image']['tmp_name']; // this contains the temporary file name
         $directory = 'uploads/userimg/'; // contains the location where the image is saved
 
-        $upload->uploadPic($name, $address, $image, $directory, $tmp);
+        $upload->uploadPic($name, $address, $loginname, md5($loginpass), $image, $directory, $tmp);
 
     }
 ?>
@@ -25,6 +27,8 @@
     <form action="" method="post" enctype="multipart/form-data">
         <input type="text" name="name" id="" placeholder="Name">
         <input type="text" name="address" id="" placeholder="Address">
+        <input type="text" name="loginname" id="" placeholder="Login Name">
+        <input type="password" name="loginpass" id="" placeholder="Password">
         <input type="file" name="image" id="">
         <input type="submit" value="Upload" name="upload">
     </form>

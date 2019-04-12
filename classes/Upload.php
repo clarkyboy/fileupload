@@ -4,7 +4,7 @@
 
     class Upload extends Database{
 
-        public function uploadPic($name, $address, $imagepath, $directory, $tmp){
+        public function uploadPic($name, $address, $loginname, $loginpass, $imagepath, $directory, $tmp){
             $extension = pathinfo($imagepath, PATHINFO_EXTENSION);
             $array_extensions = array('png', 'jpg', 'jpeg', 'gif');
 
@@ -17,7 +17,7 @@
                 if(file_exists($target_new_directory) && $target_new_directory != $directory."jedi.png" ){
                     header('Location: error.php');
                 }else{
-                    $sql = "INSERT INTO employee (`emp_name`, emp_address, emp_image_path) VALUES ('$name', '$address', '$target_new_directory')";
+                    $sql = "INSERT INTO employee (`emp_name`,  emp_login_name, emp_login_pass, emp_address, emp_image_path) VALUES ('$name', '$loginname', '$loginpass', '$address',  '$target_new_directory')";
                     $result = $this->conn->query($sql);
                     if($result){
                         move_uploaded_file($tmp, $target_new_directory);
@@ -55,6 +55,12 @@
             }
           
            
+        }
+        public function login($username, $password){
+            $sql = "SELECT * FROM employee WHERE emp_login_name = '$username' AND emp_login_pass ='$password' ";
+            $result = $this->conn->query($sql);
+            $row = $result->fetch_assoc();
+            return $row;
         }
     }
 

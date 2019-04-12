@@ -1,3 +1,20 @@
+<?php
+    session_start();
+     require_once 'classes/Upload.php';
+     $upload = new Upload;
+    if(isset($_POST['login'])){
+        $username = $_POST['username'];
+        $password = md5($_POST['password']);
+        $credentials = $upload->login($username, $password);
+        
+        if(!empty($credentials)){
+            header('Location: fileupload.php');
+        }else{
+            $_SESSION['msg'] = "Password don't match";
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +27,12 @@
 <body>
     <div class="container">
         <?php
-            session_start();
             if(!empty($_SESSION['msg'])){
                 echo "<div class='alert alert-danger'><p class='text-center'>".$_SESSION['msg']."</p></div>";
                 unset($_SESSION['msg']);
             }
         ?>
-        <form action="userAction.php" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control">
