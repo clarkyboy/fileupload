@@ -3,7 +3,7 @@
     require_once 'Database.php';
 
     class Upload extends Database{
-
+       
         public function uploadPic($name, $address, $loginname, $loginpass, $imagepath, $directory, $tmp){
             $extension = pathinfo($imagepath, PATHINFO_EXTENSION);
             $array_extensions = array('png', 'jpg', 'jpeg', 'gif');
@@ -62,6 +62,22 @@
             $row = $result->fetch_assoc();
             return $row;
         }
+
+        public function encrypt($password){
+            $character= 0;
+            $encrypted = "";
+            while($character < strlen($password)){
+                // ord function converts characters into ASCII values
+                $temp = ord($password[$character]) + 5;
+                //chr() converts ASCII to characters
+                $encrypted .= chr($temp);
+                //increments the
+                $character++;
+                
+            }
+            return $encrypted;
+        }
+
     }
 
 ?>

@@ -7,11 +7,12 @@
         $address = $_POST['address'];
         $image = $_FILES['image']['name']; // this contains the file name
         $loginname = $_POST['loginname'];
-        $loginpass = $_POST['loginpass'];
+        // $loginpass = md5($_POST['loginpass']);
+        $loginpass = $upload->encrypt($_POST['loginpass']);
         $tmp = $_FILES['image']['tmp_name']; // this contains the temporary file name
         $directory = 'uploads/userimg/'; // contains the location where the image is saved
 
-        $upload->uploadPic($name, $address, $loginname, md5($loginpass), $image, $directory, $tmp);
+        $upload->uploadPic($name, $address, $loginname, $loginpass, $image, $directory, $tmp);
 
     }
 ?>

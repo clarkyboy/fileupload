@@ -4,7 +4,7 @@
      $upload = new Upload;
     if(isset($_POST['login'])){
         $username = $_POST['username'];
-        $password = md5($_POST['password']);
+        $password = $upload->encrypt($_POST['password']);
         $credentials = $upload->login($username, $password);
         
         if(!empty($credentials)){
