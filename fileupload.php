@@ -11,8 +11,13 @@
         $loginpass = $upload->encrypt($_POST['loginpass']);
         $tmp = $_FILES['image']['tmp_name']; // this contains the temporary file name
         $directory = 'uploads/userimg/'; // contains the location where the image is saved
-
-        $upload->uploadPic($name, $address, $loginname, $loginpass, $image, $directory, $tmp);
+        $hasDuplicates = $upload->checkDuplicates($name, $loginname);
+        if(count($hasDuplicates) > 0){
+            echo "User already existing. Can't add duplicates";
+        }else{
+            $upload->uploadPic($name, $address, $loginname, $loginpass, $image, $directory, $tmp);
+        }
+        
 
     }
 ?>

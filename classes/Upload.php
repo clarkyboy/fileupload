@@ -12,7 +12,8 @@
                 if($imagepath == null){
                     $target_new_directory = $directory."jedi.png";
                 }else{
-                    $target_new_directory = $directory.$imagepath;
+                   
+                    $target_new_directory = $directory.$name.".".$extension;
                 }
                 if(file_exists($target_new_directory) && $target_new_directory != $directory."jedi.png" ){
                     header('Location: error.php');
@@ -76,6 +77,12 @@
                 
             }
             return $encrypted;
+        }
+        public function checkDuplicates($name, $loginname){
+            $sql ="SELECT * FROM employee WHERE emp_name = '$name' OR emp_login_name = '$loginname'";
+            $result = $this->conn->query($sql);
+            $row = $result->fetch_assoc();
+            return $row;
         }
 
     }
