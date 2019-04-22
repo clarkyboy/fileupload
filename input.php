@@ -18,6 +18,9 @@
         foreach($value as $key=>$time){
             echo "Timeslot: ".$time;
             echo "<br>";
+
+            $book->insert_bookDetail($userid, $couseid, $time, $date);
+
         }
        
     }
