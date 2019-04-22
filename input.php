@@ -1,5 +1,28 @@
 <?php
 
+    $weeklyschedule= array(
+            "2019-04-22" => array(
+                    "time1"=> "10:00-10:50",
+                    "time2" => "11:00-11:50"
+            ),
+            "2019-04-24" => array(
+                "time1"=> "10:00-10:50",
+                "time2" => "09:00-09:50"
+            )
+    );
+
+
+    foreach($weeklyschedule as $date=>$value){
+        echo "Date: ". $date. " Schedules";
+        echo "<br>";
+        foreach($value as $key=>$time){
+            echo "Timeslot: ".$time;
+            echo "<br>";
+        }
+       
+    }
+
+
     if(isset($_POST['Submit'])){
         //print_r($_POST['time']);
         $time = $_POST['time'];
